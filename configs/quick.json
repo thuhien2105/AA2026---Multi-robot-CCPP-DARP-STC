@@ -1,0 +1,17 @@
+{
+  "name": "quick",
+  "description": "Smoke test (about one minute): 2 maps, k = 2/4, 2 scenarios, 3 runs.",
+  "maps": [
+    {"movingai": "room-32-32-4.map", "mode": "coarse"},
+    {"movingai": "random-32-32-10.map", "mode": "coarse"}
+  ],
+  "k": [2, 4],
+  "scenarios": 2,
+  "seeds": 3,
+  "seed_chunk": 3,
+  "scenario_seed": 2026,
+  "methods": ["voronoi", "kmeans", "darp", "darp_ls", "voronoi_ls", "mmrtc", "mmrtc_dedup"],
+  "darp": {"max_iter": 2000, "learning_rate": 0.02},
+  "tree": "adaptive",
+  "workers": 4
+}

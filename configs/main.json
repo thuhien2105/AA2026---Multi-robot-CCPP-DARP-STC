@@ -1,0 +1,22 @@
+{
+  "name": "main",
+  "description": "Report set: MovingAI maps (each map cell = one coarse STC cell), k = 2..8, 5 seeded start scenarios, 30 runs per randomised method.",
+  "maps": [
+    {"movingai": "empty-32-32.map", "mode": "coarse"},
+    {"movingai": "random-32-32-10.map", "mode": "coarse"},
+    {"movingai": "room-32-32-4.map", "mode": "coarse"},
+    {"movingai": "maze-32-32-4.map", "mode": "coarse"},
+    {"movingai": "room-64-64-8.map", "mode": "coarse"},
+    {"movingai": "den312d.map", "mode": "coarse"}
+  ],
+  "k": [2, 4, 6, 8],
+  "scenarios": 5,
+  "seeds": 30,
+  "seed_chunk": 10,
+  "scenario_seed": 2026,
+  "methods": ["voronoi", "kmeans", "darp", "darp_ls", "voronoi_ls", "mmrtc", "mmrtc_dedup"],
+  "darp": {"max_iter": 2000, "learning_rate": 0.02, "cc_variation": 0.01, "random_level": 0.0001,
+           "max_threshold": 2, "distance": "euclidean", "connectivity": true, "adaptive_lr": false},
+  "tree": "adaptive",
+  "workers": 14
+}
